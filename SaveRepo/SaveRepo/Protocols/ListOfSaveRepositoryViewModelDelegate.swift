@@ -7,10 +7,8 @@
 
 import Foundation
 
-
-protocol ListOfSaveRepositoryViewModelDelegate {
-    func getAllRecord(data:[ItemDataBase])
+protocol ListOfSaveRepositoryViewModelDelegate: AnyObject {
+    func receivedNewData()
     func getAllRecordError(error:Error)
-    func getRecord(data:[ItemDataBase])
     func getRecordError(error:Error)
 }

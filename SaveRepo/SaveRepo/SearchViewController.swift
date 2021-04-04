@@ -16,7 +16,7 @@ final class SearchViewController: UIViewController {
     @IBOutlet private(set) weak var searchButton: UIButton!
     @IBOutlet private(set) weak var loadingAcivityInd: UIActivityIndicatorView!
     
-    private let searchViewModel = SearchViewModel()
+    private let searchViewModel = SearchViewModel(gitHubManager: GitHubManager())
     
     
     

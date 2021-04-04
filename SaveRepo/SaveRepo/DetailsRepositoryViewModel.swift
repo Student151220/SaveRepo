@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// ta sama historia co w SearchViewModel
 final class DetailsRepositoryViewModel{
     
     private let dataManager = DataBaseManager()
