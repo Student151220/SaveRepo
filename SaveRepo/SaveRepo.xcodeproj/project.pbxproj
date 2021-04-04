@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA80EB12619E2FC00724936 /* Uwagi.md in Sources */ = {isa = PBXBuildFile; fileRef = 1AA80EB02619E2FC00724936 /* Uwagi.md */; };
+		1AC03F21261A1D8500A4BCF6 /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC03F20261A1D8500A4BCF6 /* Array+Safe.swift */; };
 		962B0C5426130174006863FB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B0C5326130174006863FB /* SearchViewModel.swift */; };
 		962B0C5826130228006863FB /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B0C5726130228006863FB /* Owner.swift */; };
 		962B0C5B2613025B006863FB /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B0C5A2613025B006863FB /* Items.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AA80EB02619E2FC00724936 /* Uwagi.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Uwagi.md; sourceTree = "<group>"; };
+		1AC03F20261A1D8500A4BCF6 /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
 		962B0C5326130174006863FB /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		962B0C5726130228006863FB /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		962B0C5A2613025B006863FB /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				962FA77A2618DC5B0061DB65 /* View */,
 				962D17E5260B89F3002295B6 /* ViewController */,
 				962D17E6260B8A10002295B6 /* Resource  */,
+				1AA80EB02619E2FC00724936 /* Uwagi.md */,
 			);
 			path = SaveRepo;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			children = (
 				962E68A82611BF830013185B /* extensionUIViewController.swift */,
 				962E68AC2611BFA70013185B /* extensionNSObject.swift */,
+				1AC03F20261A1D8500A4BCF6 /* Array+Safe.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -311,8 +317,10 @@
 				962D17CE260B895B002295B6 /* AppDelegate.swift in Sources */,
 				962E68A52611B8CC0013185B /* SearchViewController.swift in Sources */,
 				962B0C6C26130FD7006863FB /* SearchViewModelDelegate.swift in Sources */,
+				1AA80EB12619E2FC00724936 /* Uwagi.md in Sources */,
 				962D17D0260B895B002295B6 /* SceneDelegate.swift in Sources */,
 				962FA7782618DC230061DB65 /* ListOfSaveRepositoryViewController.swift in Sources */,
+				1AC03F21261A1D8500A4BCF6 /* Array+Safe.swift in Sources */,
 				962FA7702618C00F0061DB65 /* DataBaseManager.swift in Sources */,
 				962E68A92611BF830013185B /* extensionUIViewController.swift in Sources */,
 				962E0F102615D9DF008E0152 /* ListOfRepositoryViewController.swift in Sources */,

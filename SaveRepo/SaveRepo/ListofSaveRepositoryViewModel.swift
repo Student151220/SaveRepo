@@ -7,34 +7,60 @@
 
 import Foundation
 
+protocol RepositoriesViewModel {
+    var repositories: [ItemDataBase] { get }
+    var sections: [RepositoriesListSections] { get }
+    
+    func getAllSaveRepository()
+    func getRecords(text: String)
+    func getNumberOfRows(for section: Int) -> Int
+}
 
-final class ListOfSaveRepositoryViewModel{
+// ta sama historia co w SearchViewModel
+final class ListOfSaveRepositoryViewModel: RepositoriesViewModel {
     
-    var delegate: ListOfSaveRepositoryViewModelDelegate?
-    let dataManager = DataBaseManager()
+    private weak var delegate: ListOfSaveRepositoryViewModelDelegate?
+    private let dataManager: DataBaseManager
+    var repositories: [ItemDataBase] = []
+    var sections: [RepositoriesListSections] = []
     
-    func getAllSaveRepository(){
-        dataManager.loadAllRecords(){result in
-            switch result{
+    init(dataManager: DataBaseManager, delegate: ListOfSaveRepositoryViewModelDelegate) {
+        self.dataManager = dataManager
+        self.delegate = delegate
+    }
+    
+    func getAllSaveRepository() {
+        dataManager.loadAllRecords() { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
             case .success(let items):
-                self.delegate?.getAllRecord(data: items)
+                strongSelf.repositories = items
+                strongSelf.delegate?.receivedNewData()
             case .failure(let error):
-                self.delegate?.getAllRecordError(error: error)
+                strongSelf.delegate?.getAllRecordError(error: error)
             }
         }
     }
     
     func getRecords(text:String){
-        dataManager.loadRecords(text: text){result in
+        dataManager.loadRecords(text: text) { [weak self] result in
+            guard let strongSelf = self else { return }
             switch result{
             case .success(let items):
-                self.delegate?.getRecord(data: items)
+                strongSelf.delegate?.receivedNewData()
             case .failure(let error):
-                self.delegate?.getRecordError(error: error)
+                strongSelf.delegate?.receivedNewData()
             }
         }
     }
     
-    
+    func getNumberOfRows(for section: Int) -> Int {
+        switch sections[section] {
+        case .repository:
+            return repositories.count
+        case .noResults:
+            return 1
+        }
+    }
     
 }

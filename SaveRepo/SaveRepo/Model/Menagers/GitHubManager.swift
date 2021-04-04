@@ -7,16 +7,18 @@
 
 import Foundation
 
-final class GitHubManager{
+// Ten menadżer to taki średni jest, on nie powinien robi zapytań, od tego powinien być jakiś właśnie menadżer zapytań, który jest do niego wrzucany
+
+protocol GitHubManagerRequest {
+    func request(title: String, language: String, completion: @escaping ((Result<GitHubData, Error>) -> Void))
+}
+
+final class GitHubManager: GitHubManagerRequest {
     
     private let beginUrlString = "https://api.github.com/search/repositories?q="
     private let endUrlString = "&sort=stars&order=desc"
     
-    
-    
-    
-    
-    func request(title: String, language: String, completion: @escaping ((Result<GitHubData, Error>) -> Void)){
+    func request(title: String, language: String, completion: @escaping ((Result<GitHubData, Error>) -> Void)) {
         
         let urlString = "\(beginUrlString)\(title)+language:\(language)\(endUrlString)"
         
